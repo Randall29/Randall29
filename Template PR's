@@ -1,0 +1,7 @@
+PR name: Task7: HTML+CSS+JavaScript(promises)+FakeServer
+Requirements:
+-You must use Promises to request the data for the popular company grid.
+-Use the materials and specifications from the Run Forrest, Run! Exercise.
+-You must create a fake server using https://my-json-server.typicode.com/ and consume the information of the agencies from there.
+Brief description:
+Use fetch to make http request
