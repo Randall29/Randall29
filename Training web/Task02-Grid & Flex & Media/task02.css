@@ -55,11 +55,6 @@ ul{
 }
 
 
-
-}
-
-
-
 @media screen and (max-width: 1280px) {
     .grid-container{
         justify-content: center;
@@ -82,3 +77,4 @@ ul{
         grid-template-columns: 1fr;
     }
 
+}
