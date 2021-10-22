@@ -1,9 +1,20 @@
 {
   "posts": [
-    {
-      "id": 1,
-      "title": "hello"
+    [{
+      "name": 1,
+      "descriptioj": "abc",
+      "price": 15
+    },
+     {
+      "name": 1,
+      "descriptioj": "abc",
+      "price": 15
+    },{
+      "name": 1,
+      "descriptioj": "abc",
+      "price": 15
     }
+    ]
   ],
   "profile": {
     "name": "typicode"
