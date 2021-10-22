@@ -1,6 +1,6 @@
 {
   "posts": [
-    [{
+    {
       "name": 1,
       "descriptioj": "abc",
       "price": 15
@@ -14,7 +14,6 @@
       "descriptioj": "abc",
       "price": 15
     }
-    ]
   ],
   "profile": {
     "name": "typicode"
