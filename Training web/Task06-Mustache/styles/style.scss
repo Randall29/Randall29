@@ -198,6 +198,7 @@
   .info-agents-container__item__title {
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
   }
   
   .info-agents-container__item__greyline {
@@ -214,6 +215,9 @@
     font-size: small;
     width: 50%;
     text-align: justify;
+    height: 165px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
   
   .info-agents-container__item__bodyguard-text-price {

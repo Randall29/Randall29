@@ -1,8 +1,10 @@
 let data = [
   {
     name: "Saitama",
-    description: "Besto hero and most the most powerful man on earth",
-    price: "100",
+    description:
+      "Lorem ipsum dolor sit amet,consectetur adipiscing elit.Fusce" +
+      "eleifend vel enim ac lacinia. Phasellus ac nisl id velit tristique " ,
+    price: "15",
   },
   {
     name: "Chuck Norris Bodyguard",
