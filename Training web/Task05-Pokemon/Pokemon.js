@@ -13,7 +13,6 @@ const pokemon2 = {
 };
 
 let damage = function (pokemonAtack, pokemonDefense) {
-  debugger;
   const criticDamage = 2;
   const neutralDamage = 1;
   const nonEfectiveDamage = 0.5;
