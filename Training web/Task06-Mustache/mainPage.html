@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <header class="header">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Task # 6 : Mustage</title>
-    <link rel="stylesheet" type="text/css" href="task06.css" />
+    <link
+      href="https://file.myfontastic.com/dP4DXRm7ueFTzFrUzcsxYP/icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,32 +22,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="node_modules/mustache/mustache.js"></script>
     <script src="node_modules/mustache/mustache.min.js"></script>
-    
-  </head>
+
+
+
+    <img src="assets/logo.png" class="header__nav-logo" />
+    <input class="header__menu-btn" type="checkbox" id="menu-btn" />
+    <label class="header__menu-icon" for="menu-btn">
+      <i class="fas fa-bars navicon"></i></label>
+    <ul class="header__menu">
+      <li><a href="#">Directorio de Agentes</a></li>
+      <li><a href="#">Contacto</a></li>
+      <li><a href="#">Ingresar</a></li>
+    </ul>
+  </header>
 
   <body>
-    <div class="main-container">
-      <script id="template" type="x-tmpl-mustache">
-        <li class="main-container__grid-container__grid-item">
-          <span class="main-container__grid-container__grid-item__title"
-          ><strong>{{name}}</strong></span>
-          <hr class="main-container__grid-container__grid-item__grey-line" />
-          <img
-          class="main-container__grid-container__grid-item__grid-img"
-          src="https://loremflickr.com/175/175"
+    
+    <div class="container">
+      
+      <picture>
+        <source media="(min-width:768px)" srcset="assets/banner.png" />
+        <img src="assets/banner-mobile.png" class="image-title" />
+      </picture>
+      <div class="search-bar">
+        <h3 class="search-bar__title">Los Mejores agentes de seguridad</h3>
+        <div class="search-bar__element">
+          <input
+            type="text"
+            placeholder="Buscar por Ubicación"
+            class="search-bar__element__text"
           />
-          <p class="main-container__grid-container__grid-item__text">
-          {{description}}
-          </p>
-          <span class="main-container__grid-container__grid-item__price"
-          ><strong>Desde: ${{price}} / 12 hora</strong></span>
-          <button class="main-container__grid-container__grid-item__button">
-          Contratar
+          <button class="btn search-bar__element__button">
+            <i class="icon-glass"></i>
           </button>
-          </li>
-      </script>
-      <ul class="main-container__grid-container" id="agents-data"></ul>
+        </div>
+      </div>
+      <div class="info-agents-container">
+        <script id="template" type="x-tmpl-mustache">
+          <div class="info-agents-container__item">
+            <span class="info-agents-container__item__title"
+              >{{name}}</span
+            >
+            <img src="assets/certified.png" />
+            <hr class="info-agents-container__item__greyline" />
+            <img
+              src="https://loremflickr.com/175/175"
+              class="info-agents-container__item__bodyguard-image"
+            />
+            <span class="info-agents-container__item__bodyguard-text"
+              >{{description}}</span
+            >
+            <span class="info-agents-container__item__bodyguard-text-price"
+              >Desde: ${{price}} / 12 horas</span
+            >
+            <button class="info-agents-container__item__button">Contratar</button>
+          </div>
+        </div>
+        </script>
     </div>
     <script src="render_mustage.js"></script>
   </body>
+  <footer class="footer-info">
+    <span
+      >Desarrollado por Akurey.com <br />Todos los de rechos reservados.</span
+    >
+    <a href="#">Terminos y Condiciones</a>
+  </footer>
 </html>

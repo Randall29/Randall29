@@ -26,5 +26,5 @@ let data = [
 
 $.each(data, function (index, item) {
   let template = document.getElementById('template').innerHTML;
-  $("ul").append(Mustache.render(template, item));
+  $(".info-agents-container").append(Mustache.render(template, item));
 });
