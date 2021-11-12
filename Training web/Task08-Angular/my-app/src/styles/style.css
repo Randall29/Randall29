@@ -71,7 +71,6 @@ li {
 }
 
 .image-hero {
-  width: 100%;
   height: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,9 +84,7 @@ li {
           justify-content: flex-end;
   background-image: url("../assets/banner-mobile.png");
   background-repeat: no-repeat;
-  background-position: 0px 80px;
-  background-attachment: fixed;
-  background-size: 440px 304px;
+  background-attachment: local;
 }
 
 .search-bar {
@@ -317,8 +314,8 @@ li {
     height: 428px;
     background-image: url("../assets/banner.png");
     background-repeat: no-repeat;
-    background-position: -358px 40px;
-    background-attachment: fixed;
+    background-position: -358px -40px;
+    background-attachment: local;
     background-size: 1145px 525px;
   }
   .search-bar {
@@ -382,9 +379,9 @@ li {
     height: 500px;
     background-image: url("../assets/banner.png");
     background-repeat: no-repeat;
-    background-position: 0px 37px;
-    background-attachment: fixed;
-    background-size: 1280px 580px;
+    background-position: 0px 0px;
+    background-attachment: local;
+    background-size: cover;
     width: 100%;
   }
   .search-bar {
@@ -392,7 +389,10 @@ li {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 0px 597px 151px 92px;
+    padding: 0px 597px 100px 92px;
+  }
+  .search-bar__element {
+    width: 538px;
   }
   .search-bar__title {
     width: 600px;

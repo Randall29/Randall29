@@ -1,0 +1,15 @@
+{
+  "name": "s3buckettest",
+  "version": "1.0.0",
+  "description": "Test bucket",
+  "main": "index.js",
+  "scripts": {
+    "test": "node -e \"(async () => console.log(await require('./index').handler({})))();\""
+  },
+  "author": "Randall Moya",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1026.0",
+    "fs": "^0.0.1-security"
+  }
+}

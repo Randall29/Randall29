@@ -10,11 +10,11 @@ function Header(props) {
           <i className="icon-hambuguer"></i>
         </label>
         <input className="header__menu-btn" type="checkbox" id="menu-btn" />
-        <div className="header__menu-options">
-          <a href="/#"><p>Directorio de Agentes</p></a>
-          <a href="/#"><p>Contacto</p></a>
-          <a href="/#"><span>Ingresar</span></a>
-        </div>
+        <ul className="header__menu-options">
+          <li><a href="/#"><p>Directorio de Agentes</p></a></li>
+          <li><a href="/#"><p>Contacto</p></a></li>
+          <li><a href="/#"><span>Ingresar</span></a></li>
+        </ul>
       </div>
     </div>
   );

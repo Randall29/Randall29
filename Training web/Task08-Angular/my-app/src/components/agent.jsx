@@ -4,7 +4,7 @@ import certifiedLogo from "../assets/certified.png";
 function Agent(props) {
   let agentData = props.agentData;
   return (
-    <div className="info-agents-container__item">
+    <li className="info-agents-container__item">
       <div className="info-agents-container__item__head">
         <span className="info-agents-container__item__title">
           {agentData.name}
@@ -32,7 +32,7 @@ function Agent(props) {
       </span>
       <button className="info-agents-container__item__button">Contratar</button>
       </div>
-    </div>
+    </li>
   );
 }
 
