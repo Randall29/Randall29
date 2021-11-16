@@ -2,59 +2,38 @@ const AWS = require("aws-sdk");
 AWS.config.update({
   region: "us-east-1",
 });
-const s3 = new AWS.S3();
-const fs = require("fs");
-var dynamoClient = new AWS.DynamoDB.DocumentClient();
+var sqs = new AWS.SQS();
 
-exports.handler = (event, context) => {
-  console.log("Star getImage data from bucket");
-  var getParams = {
-    Bucket: "tutorialakbucket", // your bucket name,
-    Key: "Test-lambda2.txt", // path to the object you're looking for
-  };
+exports.handler = async (event, context) => {
 
-  let objectData = "";
-
-  let getBucketInfo = () => {
-    s3.getObject(getParams, function (err, results) {
-      if (err) {
-        console.log("Error obtain from Bucket");
-        console.log(err);
-        return err;
-      } else {
-        console.log("Success obtain data from Bucket");
-        return results.Body.toString("utf-8");
+  var params = {
+     // Remove DelaySeconds parameter and value for FIFO queues
+    DelaySeconds: 10,
+    MessageAttributes: {
+      "Title": {
+        DataType: "String",
+        StringValue: "The Whistler"
+      },
+      "Author": {
+        DataType: "String",
+        StringValue: "John Grisham"
+      },
+      "WeeksOn": {
+        DataType: "Number",
+        StringValue: "6"
       }
-    });
+    },
+    MessageBody: "Information about current NY Times fiction bestseller for week of 12/11/2016.",
+    // MessageDeduplicationId: "TheWhistler",  // Required for FIFO queues
+    // MessageGroupId: "Group1",  // Required for FIFO queues
+    QueueUrl: "https://sqs.us-east-1.amazonaws.com/148259750838/TutorialAKQueue"
   };
-
   
-
-  let uploadDynamoInfo = () => {
-    objectData = getBucketInfo();
-    console.log('Data obtain: ',objectData);
-    let params = {
-        TableName: "TutorialImage",
-        Item: {
-          TimeStamp: new Date().toString(),
-          base64image: objectData,
-        },
-      };
-    dynamoClient.put(params, async function (err, data) {
-      console.log("Upload to dynamoDB start!");
-      
-      if (err) {
-        console.error(
-          "Unable to add image",
-          objectData,
-          ". Error JSON:",
-          JSON.stringify(err, null, 2)
-        );
-      } else {
-        console.log("Success adding image to dynamoDB: ", objectData);
-      }
-    });
-  };
-  uploadDynamoInfo();
-  return objectData;
+  sqs.sendMessage(params, function(err, data) {
+    if (err) {
+      console.log("Error", err);
+    } else {
+      console.log("Success", data.MessageId);
+    }
+  });
 };
